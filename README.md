@@ -59,6 +59,47 @@ cd ~/dotfiles && ./install-arch.sh
 └── install-arch.sh         # Arch bootstrap
 ```
 
+## Tmux Pentest Session
+
+Launch a structured pentest tmux session with:
+
+```bash
+~/.tmux/pentest.sh <client> <scope> <logins>
+```
+
+Or trigger it from inside tmux with **prefix + Ctrl-T** which opens an interactive popup.
+
+**Arguments:**
+- `client` — client/engagement name, used for the session name and folder (`~/Documents/Clients/<client>/`)
+- `scope` — IP, domain, or path to a scope file. Use `f` to fuzzy-pick a file
+- `logins` — credentials or notes to prepend to scope.txt (optional)
+
+**Example:**
+```bash
+~/.tmux/pentest.sh acmecorp 192.168.1.0/24 "admin:password123"
+```
+
+**What gets created:**
+- `~/Documents/Clients/<client>/scope.txt` — targets
+- `~/Documents/Clients/<client>/notes.md` — pre-filled notes template
+- `~/Documents/Clients/<client>/found/` — nmap output saved here
+- `~/Documents/Clients/<client>/not found/`
+
+**Windows:**
+
+| Window | Purpose |
+|--------|---------|
+| `nmap` | Pre-loaded nmap command (edit flags then Enter). Output saves to `found/nmap.txt` |
+| `ssl` | testssl / cert checks |
+| `dir enum` | ffuf / gobuster / dirb |
+| `scope` | nvim with scope.txt open |
+| `js` | JS recon |
+| `reco` | General recon |
+
+**Session manager** — **prefix + Ctrl-P** opens a fuzzy session switcher. Type a new name and press Enter to create a session, Ctrl-D to delete.
+
+---
+
 ## After install
 
 1. Log out and back in for zsh to take effect
