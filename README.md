@@ -61,6 +61,12 @@ cd ~/dotfiles && ./install-arch.sh
 
 ## Tmux Pentest Session
 
+> Just want the pentest tmux setup without installing everything else? Run:
+> ```bash
+> bash <(curl -fsSL https://raw.githubusercontent.com/Galatron01/kali-setup/main/install-pentest-tmux.sh)
+> ```
+> Works on Kali and Arch. Only requires tmux, fzf, and git.
+
 Launch a structured pentest tmux session with:
 
 ```bash
