@@ -36,11 +36,10 @@ section "Pacman Packages"
 sudo pacman -Syu --noconfirm
 
 PACMAN_PACKAGES=(
-  # Window manager / desktop
-  i3-wm i3blocks i3status polybar rofi dunst picom feh flameshot
-  lxappearance redshift kitty alacritty sxhkd
-  papirus-icon-theme ttf-font-awesome ttf-hack noto-fonts noto-fonts-emoji
+  # Desktop — GNOME
   gnome-tweaks dconf-editor
+  papirus-icon-theme ttf-font-awesome ttf-hack noto-fonts noto-fonts-emoji
+  kitty alacritty redshift flameshot rofi dunst
 
   # Shell / terminal tools
   zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -201,7 +200,7 @@ link "$DOTFILES_DIR/.tmux/pentest.sh"         "$HOME/.tmux/pentest.sh"
 link "$DOTFILES_DIR/.tmux/session-manager.sh" "$HOME/.tmux/session-manager.sh"
 chmod +x "$HOME/.tmux/pentest.sh" "$HOME/.tmux/session-manager.sh"
 
-for dir in dunst i3 kitty picom redshift rofi scripts zathura polybar fish nvim; do
+for dir in dunst kitty redshift rofi scripts zathura fish nvim; do
   link "$DOTFILES_DIR/.config/$dir" "$HOME/.config/$dir"
 done
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
@@ -243,7 +242,7 @@ echo "   1. Log out and back in for the zsh shell change to take effect"
 echo "   2. Run 'p10k configure' if the prompt needs reconfiguring"
 echo "   3. Open nvim — :Lazy will auto-install plugins on first launch"
 echo "   4. Set up your Obsidian vault"
-echo "   5. On i3 startup, launch polybar with: ~/.config/polybar/launch.sh --<theme>"
+echo "   5. Install GNOME extensions from extensions.gnome.org (see README)"
 echo "   6. Clone private repos (requires SSH key):"
 echo "        git clone git@github.com:Galatron01/payload-manager ~/payload-manager"
 echo "        git clone git@github.com:Galatron01/pentest-tmux ~/pentest-tmux"

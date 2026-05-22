@@ -38,11 +38,10 @@ APT_PACKAGES=(
   kali-tools-sniffing-spoofing
   kali-tools-social-engineering
 
-  # Window manager / desktop
-  i3 i3blocks i3status i3-wm polybar rofi dunst picom feh flameshot
-  lxappearance redshift kitty alacritty sxhkd
-  papirus-icon-theme fonts-font-awesome fonts-hack fonts-inter fonts-noto-color-emoji
+  # Desktop — GNOME
   gnome-tweaks gnome-shell-extension-manager dconf-editor
+  papirus-icon-theme fonts-font-awesome fonts-hack fonts-inter fonts-noto-color-emoji
+  kitty alacritty redshift flameshot
 
   # Shell / terminal tools
   zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -175,7 +174,7 @@ link "$DOTFILES_DIR/.tmux/session-manager.sh" "$HOME/.tmux/session-manager.sh"
 chmod +x "$HOME/.tmux/pentest.sh" "$HOME/.tmux/session-manager.sh"
 
 # ~/.config entries
-for dir in dunst i3 kitty picom redshift rofi scripts zathura polybar fish nvim; do
+for dir in dunst kitty redshift rofi scripts zathura fish nvim; do
   link "$DOTFILES_DIR/.config/$dir" "$HOME/.config/$dir"
 done
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
