@@ -179,14 +179,14 @@ for dir in dunst kitty redshift rofi scripts zathura fish nvim; do
 done
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 
-# ── default shell → zsh ───────────────────────────────────────
+# ── default shell → fish ─────────────────────────────────────
 section "Default shell"
 CURRENT_SHELL="$(getent passwd "$USER" | cut -d: -f7)"
-if [ "$CURRENT_SHELL" != "/usr/bin/zsh" ]; then
-  chsh -s /usr/bin/zsh
-  log "Default shell set to zsh (takes effect on next login)."
+if [ "$CURRENT_SHELL" != "/usr/bin/fish" ]; then
+  chsh -s /usr/bin/fish
+  log "Default shell set to fish (takes effect on next login)."
 else
-  log "zsh is already the default shell."
+  log "fish is already the default shell."
 fi
 
 # ── install tmux plugins via tpm ─────────────────────────────

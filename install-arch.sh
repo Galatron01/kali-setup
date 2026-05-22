@@ -214,14 +214,14 @@ systemctl --user enable --now pipewire pipewire-pulse wireplumber 2>/dev/null \
 sudo systemctl enable cronie 2>/dev/null && log "cronie enabled." || true
 sudo systemctl enable vmtoolsd 2>/dev/null && log "vmtoolsd enabled." || true
 
-# ── default shell → zsh ───────────────────────────────────────
+# ── default shell → fish ─────────────────────────────────────
 section "Default shell"
 CURRENT_SHELL="$(getent passwd "$USER" | cut -d: -f7)"
-if [ "$CURRENT_SHELL" != "/usr/bin/zsh" ]; then
-  chsh -s /usr/bin/zsh
-  log "Default shell set to zsh (takes effect on next login)."
+if [ "$CURRENT_SHELL" != "/usr/bin/fish" ]; then
+  chsh -s /usr/bin/fish
+  log "Default shell set to fish (takes effect on next login)."
 else
-  log "zsh is already the default shell."
+  log "fish is already the default shell."
 fi
 
 # ── install tmux plugins ──────────────────────────────────────
@@ -238,7 +238,7 @@ echo ""
 log "Installation complete!"
 echo ""
 warn "Manual steps remaining:"
-echo "   1. Log out and back in for the zsh shell change to take effect"
+echo "   1. Log out and back in for the fish shell change to take effect"
 echo "   2. Run 'p10k configure' if the prompt needs reconfiguring"
 echo "   3. Open nvim — :Lazy will auto-install plugins on first launch"
 echo "   4. Set up your Obsidian vault"
