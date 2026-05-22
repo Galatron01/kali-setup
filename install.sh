@@ -39,6 +39,7 @@ APT_PACKAGES=(
   kali-tools-social-engineering
 
   # Desktop — GNOME
+  kali-desktop-gnome
   gnome-tweaks gnome-shell-extension-manager dconf-editor
   papirus-icon-theme fonts-font-awesome fonts-hack fonts-inter fonts-noto-color-emoji
   kitty alacritty redshift flameshot
