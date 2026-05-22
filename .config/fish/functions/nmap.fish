@@ -1,0 +1,1 @@
+/home/kali/nmap-dracula/shell/nmap.fish
